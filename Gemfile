@@ -18,6 +18,7 @@ gem 'devise-bootstrap-views', '~> 0.0.5'
 gem 'rspec', '~> 3.3.0'
 
 gem 'active_model_serializers', '~> 0.9.3'
+gem 'puma', '~> 2.12.3'
 
 group :development, :test do
   gem 'pry-byebug'
