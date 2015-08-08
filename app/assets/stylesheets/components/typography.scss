@@ -1,0 +1,61 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+
+@for $i from 1 to 7 {
+  h#{$i} {
+    margin: 0;
+    padding: 0;
+  }
+}
+.text {
+  &-md {
+    font-size: 1.2em;
+  }
+}
+.text {
+  &-xs {
+    font-size: 0.72em;
+  }
+  &-sm {
+    font-size: 0.86em;
+  }
+  &-norm {
+    font-size: 1em;
+  }
+  &-md {
+    font-size: 1.14em;
+  }
+  &-lg {
+    font-size: 1.28em;
+  }
+}
+.head {
+  &-xs {
+    font-size: 1.42em;
+  }
+  &-sm {
+    font-size: 1.57em;
+  }
+  &-norm {
+    font-size: 1.71em;
+  }
+  &-md {
+    font-size: 1.85em;
+  }
+  &-lg {
+    font-size: 1.9em;
+  }
+}
+.color {
+  &-white {
+    color: white;
+  }
+  &-text {
+    color: $text-color;
+  }
+  &-gray {
+    color: rgba($text-color, 0.5);
+  }
+  &-light {
+    color: rgba($text-color, 0.3);
+  }
+}

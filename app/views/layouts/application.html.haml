@@ -7,10 +7,17 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    .header
     .table.fixed.content
       .table-cell.content-left.align-top
-        hello
+        .gutter-top-3x
+          .gutter-horizontal.gutter-vertical
+            hello
       .table-cell.content-center.align-top
-        %p.notice=notice
-        %p.alert=alert
-        = yield
+        .gutter-top-3x
+          .gutter-horizontal.gutter-vertical
+            .clearfix
+              %p.notice=notice
+              %p.alert=alert
+            .clearfix
+              = yield

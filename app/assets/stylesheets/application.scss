@@ -3,12 +3,15 @@
 @import "variables/gutter";
 @import "variables/sizes";
 @import "variables/colors";
+@import "variables/typography";
 
 @import "mixins/icomoon";
 @import "mixins/animation";
 @import "mixins/shapes";
 
 @import "components/bootstrap";
+@import "components/typography";
 @import "components/bg";
 @import "components/table";
 @import "components/layout";
+@import "components/gutter";

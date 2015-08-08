@@ -1,0 +1,22 @@
+$font-family-sans-serif: 'Roboto', sans-serif;
+$font-family-base: $font-family-sans-serif;
+
+$light: 300;
+$normal: 400;
+$semi: 500;
+$bold: 700;
+
+.text {
+  &-light {
+    font-weight: $light;
+  }
+  &-normal {
+    font-weight: $normal;
+  }
+  &-semi {
+    font-weight: $semi;
+  }
+  &-bold {
+    font-weight: $bold;
+  }
+}
