@@ -19,6 +19,7 @@ gem 'rspec', '~> 3.3.0'
 
 gem 'active_model_serializers', '~> 0.9.3'
 gem 'puma', '~> 2.12.3'
+gem "bower-rails", "~> 0.10.0"
 
 group :development, :test do
   gem 'pry-byebug'
