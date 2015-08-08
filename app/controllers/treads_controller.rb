@@ -1,0 +1,2 @@
+class TreadsController < ApplicationController
+end

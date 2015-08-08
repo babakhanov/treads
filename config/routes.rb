@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  devise_for :users
-  root to: 'pages#index'
+  resources :treads do
+    resources :messages
+  end
+  root to: 'treads#index'
 end
