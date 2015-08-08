@@ -1,0 +1,20 @@
+test: &default
+  adapter: postgresql
+  encoding: unicode
+  database: treads_test
+  pool: 5
+  host: localhost
+  user: alex 
+  password: 123
+
+production:
+  <<: *default
+  database: treads_production
+
+staging:
+  <<: *default
+  database: treads_staging
+
+development:
+  <<: *default
+  database: treads_development
