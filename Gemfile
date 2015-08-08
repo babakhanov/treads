@@ -21,6 +21,8 @@ gem 'active_model_serializers', '~> 0.9.3'
 gem 'puma', '~> 2.12.3'
 gem "bower-rails", "~> 0.10.0"
 
+gem 'redis-rails', '~> 4.0.0'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'railroady', '~> 1.3.1'
