@@ -16,6 +16,7 @@ gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'devise', '~> 3.5.1'
 gem 'devise-bootstrap-views', '~> 0.0.5'
 gem 'rspec', '~> 3.3.0'
+gem 'cancancan'
 
 gem 'active_model_serializers', '~> 0.9.3'
 gem 'puma', '~> 2.12.3'
@@ -31,4 +32,3 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-
