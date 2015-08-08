@@ -4,14 +4,31 @@ html, body {
   width: 100%;
   height: 100%;
   position: relative;
+  font-weight: $normal;
+}
+body {
+  padding: $gutter / 2;
+  font-size: 1.4rem;
 }
 .content {
+  @include box-shadow(0 0 8px 2px rgba(black, 0.03));
   &-left {
     width: 32rem;
-    background: yellow;
+    border-style: none solid none none;
+    border-width: 0.2rem;
+    border-color: $body-bg;
+    background: white;
   }
   &-center {
     background: white;
     width: auto;
   } 
 } 
+.header {
+  position: absolute;
+  background: #777;
+  top: $gutter / 2;
+  left: $gutter / 2;
+  right: $gutter / 2;
+  height: $gutter * 1.5;
+}
