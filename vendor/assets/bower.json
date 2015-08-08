@@ -1,6 +1,8 @@
 {
   "name": "dsl-generated dependencies",
   "dependencies": {
-    "socket.io-client": "latest"
+    "socket.io-client": "latest",
+    "angular": "latest",
+    "angular-route": "latest"
   }
 }

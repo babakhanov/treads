@@ -1,0 +1,17 @@
+html, body {
+  display: block;
+  float: left;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.content {
+  &-left {
+    width: 32rem;
+    background: yellow;
+  }
+  &-center {
+    background: white;
+    width: auto;
+  } 
+} 

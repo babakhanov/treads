@@ -1,0 +1,20 @@
+$gutter: $grid-gutter-width;
+
+$sides: (
+  "top", 
+  "right", 
+  "bottom", 
+  "left", 
+  "horizontal", 
+  "vertical"
+);
+
+$sides-prop: (
+ ("top"), 
+ ("right"), 
+ ("bottom"), 
+ ("left"), 
+ ("left", "right"), 
+ ("top", "bottom")
+);
+
