@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :treads do
     resources :messages
   end
+  resources :users, only: [:index]
   root to: 'treads#index'
 end

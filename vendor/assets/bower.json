@@ -3,6 +3,7 @@
   "dependencies": {
     "socket.io-client": "latest",
     "angular": "latest",
-    "angular-route": "latest"
+    "angular-route": "latest",
+    "angular-resource": "latest"
   }
 }

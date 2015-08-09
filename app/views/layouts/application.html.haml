@@ -1,5 +1,5 @@
 !!!
-%html
+%html(ng-app="app")
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Treads
@@ -10,9 +10,7 @@
     .header
     .table.fixed.content
       .table-cell.content-left.align-top
-        .gutter-top-3x
-          .gutter-horizontal.gutter-vertical
-            hello
+        %left-aside
       .table-cell.content-center.align-top
         .gutter-top-3x
           .gutter-horizontal.gutter-vertical
@@ -20,4 +18,4 @@
               %p.notice=notice
               %p.alert=alert
             .clearfix
-              = yield
+              %div(ng-view)
