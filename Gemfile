@@ -13,9 +13,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml-rails', '~> 0.9.0'
 gem 'bootstrap-sass', '~> 3.3.5.1'
 
+gem 'angular-rails-templates', '~> 0.2.0'
+
 gem 'devise', '~> 3.5.1'
 gem 'devise-bootstrap-views', '~> 0.0.5'
-gem 'rspec', '~> 3.3.0'
 gem 'cancancan'
 
 gem 'active_model_serializers', '~> 0.9.3'
@@ -30,5 +31,7 @@ group :development, :test do
   gem 'railroady', '~> 1.3.1'
   gem 'habtm_generator', '~> 0.3'
   gem 'web-console', '~> 2.0'
+  gem 'factory_girl_rails'
   gem 'spring'
+  gem 'rspec-rails', '~> 3.0'
 end

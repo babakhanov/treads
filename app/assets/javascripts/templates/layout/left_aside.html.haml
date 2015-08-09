@@ -1,0 +1,9 @@
+
+.col-xs-12(ng-show="users" style="height: 100%;  width: 100%; position: relative;")
+  .col-xs-12(style="position: absolute; top: 45px; left: 0; right: 0; bottom: 0; overflow: auto;")
+    .gutter-horizontal.gutter-vertical
+      .gutter-vertical-xs.border-bottom.border-light(ng-repeat="user in users track by user.id")
+        .smile(style="display: inline-block; color: white; background: #777; width: 2em; height: 2em; text-align: center; border-radius: 100%; line-height: 2em; vertical-align: middle;")
+          {{::userInnitials(user)}}
+        {{::user.first_name}}
+        {{::user.last_name}}

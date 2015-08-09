@@ -5,3 +5,4 @@
 asset "socket.io-client"
 asset "angular";
 asset "angular-route";
+asset "angular-resource";
