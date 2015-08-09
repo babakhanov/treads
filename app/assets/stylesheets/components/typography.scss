@@ -59,3 +59,10 @@
     color: rgba($text-color, 0.3);
   }
 }
+.text {
+  @each $i in (left, center, right){
+    &-#{$i}{
+      text-align: $i;
+    }
+  }
+}

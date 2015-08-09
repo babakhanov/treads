@@ -1,0 +1,14 @@
+.link {
+  &-base {
+    text-decoration: none;
+    color: inherit;
+    &:hover, &:focus {
+      color: $link-color;
+      text-decoration: none;
+    }
+  }
+  &-inherit, &-inherit:hover, &-inherit-focus {
+    text-decoration: none;
+    color: inherit;
+  }
+}

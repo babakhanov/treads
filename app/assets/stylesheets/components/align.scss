@@ -1,0 +1,14 @@
+.align {
+  @each $i in (top, bottom, middle){
+    &-#{$i}{
+      vertical-align: $i;
+    }
+  } 
+}
+@mixin extend-simple-align {
+  @each $i in (top, bottom, middle){
+    &.#{$i} {
+      @extend .align-#{$i};
+    }
+  }
+}

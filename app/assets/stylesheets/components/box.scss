@@ -1,0 +1,17 @@
+.box {
+  @for $i from 1 to 13 {
+    &-#{$i}{
+      width: #{$i}em;
+      height: #{$i}em;
+      line-height: #{$i}em;
+      @extend .text-center;
+    }
+  }
+}
+.block {
+  @for $i from 1 to 13 {
+    &-#{$i}{
+      width: #{$i}em;
+    }
+  }
+}

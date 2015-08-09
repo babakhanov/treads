@@ -1,0 +1,24 @@
+.aside {
+  @extend .col-xs-12;
+  @extend .full-height;
+  @extend .full-width;
+  &-container {
+    @extend .cover;
+    @extend .overflow-auto;
+    top: $header-height;
+  }
+  &-user {
+    @extend .link-base;
+    &-short {
+      @extend .smile;
+      @extend .middle;
+      @extend .text-center;
+      @extend .text-lg;
+      @extend .text-light;
+      @extend .color-white;
+      @extend .bg-gray;
+      @extend .box-2;
+      @extend .border-circle;
+    }
+  }
+}
