@@ -18,10 +18,3 @@
     width: percentage($i / 12);
   }
 }
-.align {
-  @each $i in (top, bottom, middle){
-    &-#{$i}{
-      vertical-align: $i;
-    }
-  } 
-}

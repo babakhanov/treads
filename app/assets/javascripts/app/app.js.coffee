@@ -15,9 +15,9 @@ angular.module("app").config ($routeProvider) ->
     .when("/",
       templateUrl: "treads/index.html",
       controller: "treadsCtrl"
-    ).when('/sign_in',
-      templateUrl: 'sign_in.html',
-      controller: 'SessionsCtrl'
+    ).when('/treads/:id',
+      templateUrl: 'treads/show.html',
+      controller: 'treadCtrl'
     ).otherwise(
       redirectTo: "/"
     )

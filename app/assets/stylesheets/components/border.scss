@@ -1,0 +1,8 @@
+.border {
+  &-circle {
+    border-radius: 100%;
+  }
+  &-round {
+    border-radius: border-radius-base;
+  }
+}

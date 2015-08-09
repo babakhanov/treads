@@ -1,0 +1,23 @@
+.relative {
+  position: relative;
+}
+.overflow {
+  @each $i in (auto, hidden){
+    &-#{$i}{
+      overflow: $i;
+    }
+  }
+}
+.full {
+  @each $i in (height, width){
+    &-#{$i}{
+      #{$i}: 100%;
+    }
+  }
+}
+.cover {
+  position: absolute;
+  @each $side in $sides-common {
+    #{$side}: 0;
+  }
+}
