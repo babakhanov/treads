@@ -11,5 +11,20 @@ module Seeder extend self
       FactoryGirl.create(:user, email: "test#{i}@mail.com", password: "password", password_confirmation: 'password')
     end
   end
+
+  def create_treads
+    current_user = User.find_by(email: "test@mail.com")
+    users = User.all
+    users.each do |user|
+      tread = Tread.create
+      tread.users << current_user
+      tread.users << user
+      tread.save
+      6.times do
+        tread.messages.create user_id: current_user.id, text: Faker::Lorem.sentence
+        tread.messages.create user_id: user.id, text: Faker::Lorem.sentence
+      end
+    end
+  end
     
 end

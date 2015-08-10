@@ -1,7 +1,5 @@
 treadsCtrl = ->
-  ($scope, $resource, User) ->
-    User.index '', (response) ->
-      $scope.users = response.users
-    
+  ($scope) ->
+     
 
-angular.module("app.treads").controller "treadsCtrl", ["$scope", "$resource", "User", treadsCtrl()]
+angular.module("app.treads").controller "treadsCtrl", ["$scope", treadsCtrl()]

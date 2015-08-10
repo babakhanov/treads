@@ -1,6 +1,6 @@
-angular.module "app.shared"
-  .factory "User", ($resource) ->
-    $resource "/users/:id", { id: "@id" },
+angular.module "app.resources"
+  .factory "Message", ($resource) ->
+    $resource "/treads/:id/messages", { id: "@id" },
       create:
         method: "POST"
       index:
