@@ -1,10 +1,12 @@
 //= require ./treads/treads
 //= require ./shared/shared
+//= require ./resources/resources
 
 angular.module("app", [
   "ngRoute"
   "templates"
   "ngResource"
+  "app.resources"
   "app.shared"
   "app.treads"
 ])
