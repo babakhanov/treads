@@ -25,6 +25,7 @@ body {
   } 
 } 
 .header {
+  z-index: 3;
   position: absolute;
   background: #777;
   top: $gutter / 2;
