@@ -1,0 +1,5 @@
+textarea.form-control {
+  &.auto-grow-textarea {
+    resize: none;
+  }
+}
