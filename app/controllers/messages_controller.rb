@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
   end
 
   def index
-    @messages = Message.where(tread_id: params[:tread_id])
+    @messages = Message.includes(:user).where(tread_id: params[:tread_id])
     render json: @messages
   end
 

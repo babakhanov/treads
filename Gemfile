@@ -25,6 +25,8 @@ gem "bower-rails", "~> 0.10.0"
 
 gem 'redis-rails', '~> 4.0.0'
 
+gem 'gon', '~> 6.0.1'
+
 group :development, :test do
   gem 'faker', '~> 1.4.3'
   gem 'pry-byebug'
