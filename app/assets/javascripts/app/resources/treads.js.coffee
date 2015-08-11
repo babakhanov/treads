@@ -5,6 +5,8 @@ angular.module "app.resources"
         method: "POST"
       index:
         method: "GET"
+      show:
+        method: "GET"
       destroy:
         method: "DELETE"
       update:
