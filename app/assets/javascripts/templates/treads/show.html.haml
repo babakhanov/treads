@@ -2,8 +2,9 @@
   %table.table.fixed
     %tr(style="height: 100%;")
       %td(style="height: 100%;")
-        %div(ng-repeat="message in messages track by message.id")
-          %message-item(message="message" user="users[message.user_id]")
+        .messages
+          %div(ng-repeat="message in messages track by message.id")
+            %message-item(message="message" user="users[message.user_id]")
     %tr
       %td
         %textarea.form-control.auto-grow-textarea

@@ -5,7 +5,7 @@
 
         %a.aside-user(ng-href="/#/treads/{{tread.id}}")
           .aside-user-short
-            {{::userInnitials(tread.users[0])}}
+            {{::tread.users[0].full_name | userAbbr}}
           .smile.middle.gutter-left-sm
             {{::tread.users[0].first_name}}
             {{::tread.users[0].last_name}}

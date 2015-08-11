@@ -1,0 +1,10 @@
+.messages {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 10rem;
+  overflow: auto;
+  padding: $gutter / 2;
+  padding-top: $gutter / 2 + $header-height;
+}
