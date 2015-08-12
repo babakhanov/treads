@@ -1,0 +1,19 @@
+*[data-tooltip]{
+  position: relative;
+  &:after {
+    content: attr(data-tooltip);
+    font-size: 1.2rem;
+    color: white;
+    background: black;
+    border-radius: 3px;
+    position: absolute;
+    top: -2em;
+    padding: 0.4em 1em;
+    font-weight: normal;
+    line-height: normal;
+    display: none;
+  }
+  &:hover:after {
+    display: block;
+  }
+}

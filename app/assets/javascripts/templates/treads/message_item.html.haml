@@ -1,10 +1,10 @@
 .message-item(ng-class="{'text-right': user.id == current_user.id}")
   .gutter-bottom-xs
-    .smile.gutter-right-sm
-      .aside-user-short(ng-if="user.id != current_user.id")
+    .smile.gutter-right-sm(ng-if="user.id != current_user.id" data-tooltip="{{user.full_name}}")
+      .aside-user-short
         {{::user.full_name | userAbbr}}
     .smile.bg-white.gutter-horizontal.gutter-vertical-sm
       {{::message.text}}
-    .smile.gutter-left-sm(ng-if="user.id == current_user.id")
+    .smile.gutter-left-sm(ng-if="user.id == current_user.id" data-tooltip="{{user.full_name}}")
       .aside-user-short
         {{::user.full_name | userAbbr}}
