@@ -7,7 +7,7 @@ class TreadsController < ApplicationController
   end
 
   def index
-    @treads = Tread.joins(:treads_users).where("treads_users.user_id" => current_user.id)
+    @treads = Tread.list(current_user.id)
     render json: @treads, each_serializer: ::TreadShortSerializer
   end
 
