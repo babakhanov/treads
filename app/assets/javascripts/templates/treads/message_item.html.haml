@@ -1,10 +1,12 @@
-.message-item(ng-class="{'text-right': user.id == current_user.id}")
+.message-item(ng-class="{'text-right': user.id == current_user.user.id}")
   .gutter-bottom-xs
-    .smile.gutter-right-sm(ng-if="user.id != current_user.id" data-tooltip="{{user.full_name}}")
-      .aside-user-short
+    .align-middle.smile.gutter-right-sm(ng-if="user.id != current_user.user.id")
+      .aside-user-md
         {{::user.full_name | userAbbr}}
-    .smile.bg-white.gutter-horizontal.gutter-vertical-sm
+    .align-middle.smile.bg-white.gutter-horizontal.gutter-vertical-sm
+      .gutter-bottom-xs.text-semi.text-left
+        {{::user.full_name}}
       {{::message.text}}
-    .smile.gutter-left-sm(ng-if="user.id == current_user.id" data-tooltip="{{user.full_name}}")
-      .aside-user-short
+    .align-middle.smile.gutter-left-sm(ng-if="user.id == current_user.user.id")
+      .aside-user-md
         {{::user.full_name | userAbbr}}

@@ -1,11 +1,11 @@
-.aside
-  .aside-container
-    .gutter-horizontal.gutter-vertical
-      .gutter-vertical-xs.border-bottom.border-light(ng-repeat="tread in treads track by tread.id")
-
-        %a.aside-user(ng-href="/#/treads/{{tread.id}}")
-          .aside-user-short
-            {{::tread.users[0].full_name | userAbbr}}
-          .smile.middle.gutter-left-sm
-            {{::tread.users[0].first_name}}
-            {{::tread.users[0].last_name}}
+.table-cell.content-left.align-top(ng-show="user")
+  .aside
+    .aside-container
+      .gutter-horizontal.gutter-vertical
+        .gutter-vertical-xs.border-bottom.border-light(ng-repeat="tread in treads track by tread.id")
+          %a.aside-user(ng-href="/#/treads/{{tread.id}}")
+            .aside-user-short
+              {{::tread.users[0].full_name | userAbbr}}
+            .smile.middle.gutter-left-sm
+              {{::tread.users[0].first_name}}
+              {{::tread.users[0].last_name}}

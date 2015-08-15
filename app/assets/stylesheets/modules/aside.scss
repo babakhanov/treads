@@ -9,7 +9,7 @@
   }
   &-user {
     @extend .link-base;
-    &-short {
+    &-short, &-md {
       @extend .smile;
       @extend .middle;
       @extend .text-center;
@@ -17,8 +17,13 @@
       @extend .text-light;
       @extend .color-white;
       @extend .bg-gray;
-      @extend .box-2;
       @extend .border-circle;
+    }
+    &-short {
+      @extend .box-2;
+    }
+    &-md {
+      @extend .box-3;
     }
   }
 }
