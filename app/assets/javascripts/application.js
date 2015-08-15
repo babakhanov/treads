@@ -1,6 +1,5 @@
 //= require socket.io-client/socket.io
 //= require jquery
-//= require jquery.autogrow-textarea
 //= require angular/angular
 //= require angular-devise/lib/devise
 //= require angular-route/angular-route

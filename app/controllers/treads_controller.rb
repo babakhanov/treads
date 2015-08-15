@@ -1,4 +1,5 @@
 class TreadsController < ApplicationController
+  load_and_authorize_resource
 
   # hack for show only one tread
   def show

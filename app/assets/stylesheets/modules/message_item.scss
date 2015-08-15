@@ -1,10 +1,14 @@
 .messages {
   position: absolute;
-  top: 0;
+  top: $header-height;
   left: 0;
   right: 0;
   bottom: 10rem;
-  overflow: auto;
   padding: $gutter / 2;
-  padding-top: $gutter / 2 + $header-height;
+  overflow: auto;
+  @include opacity(0);
+  @include transition-duration(0.8s);
+  &.loaded {
+    @include opacity(1);
+  }
 }
