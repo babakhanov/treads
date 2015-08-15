@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
+  skip_before_action :authenticate_user!
   def index
-    gon.push({ user: current_user })
     render html: "", layout: true
   end
 end

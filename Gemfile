@@ -17,6 +17,7 @@ gem 'angular-rails-templates', '~> 0.2.0'
 
 gem 'devise', '~> 3.5.1'
 gem 'devise-bootstrap-views', '~> 0.0.5'
+gem 'angular_rails_csrf', '~> 1.0.4'
 gem 'cancancan'
 
 gem 'active_model_serializers', '~> 0.9.3'
@@ -24,8 +25,6 @@ gem 'puma', '~> 2.12.3'
 gem "bower-rails", "~> 0.10.0"
 
 gem 'redis-rails', '~> 4.0.0'
-
-gem 'gon', '~> 6.0.1'
 
 group :development, :test do
   gem 'faker', '~> 1.4.3'

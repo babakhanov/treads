@@ -4,8 +4,9 @@ messageItemDirective =  ->
   scope: 
     message: "="
     user: "="
-  controller: ($scope, $element, $attrs) ->
-    $scope.current_user = gon.user
+  controller: [ "$scope", "$rootScope", ($scope, $rootScope) ->
+    $scope.current_user = $rootScope.user
+  ]
 
   controllerAs: "block"
 

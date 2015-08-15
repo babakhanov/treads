@@ -6,3 +6,5 @@ asset "socket.io-client"
 asset "angular";
 asset "angular-route";
 asset "angular-resource";
+asset "angular-devise";
+asset "ngtoast"

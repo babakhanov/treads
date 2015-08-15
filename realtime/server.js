@@ -1,13 +1,15 @@
-var io = require('socket.io').listen(5001),
-    redis = require('redis').createClient();
-console.log("Im working xoxo");
+var io, redis;
 
-redis.subscribe('rt-change');
+io = require('socket.io').listen(5001);
 
-io.on('connection', function(socket){
-  redis.on('message', function(channel, message){
-    console.log("redis on message");
-    socket.emit('rt-change', JSON.parse(message));
+redis = require('redis').createClient();
+
+redis.subscribe('message');
+
+io.on('connection', function(socket) {
+  redis.on('message', function(channel, message) {
+    var response = JSON.parse(message).message;
+    socket.emit('tread_' + response.tread_id, response);
   });
 });
 

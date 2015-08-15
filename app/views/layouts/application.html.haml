@@ -5,13 +5,13 @@
     %title Treads
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = include_gon
+    %script(type="text/javascript")
+      window.anonimusUser = #{!user_signed_in?}
     = csrf_meta_tags
-  %body
+  %body(ng-controller="mainCtrl")
     .header
-    .table.fixed.content
-      .table-cell.content-left.align-top
-        %left-aside
+    .table.fixed.content(ng-if="ready")
+      %left-aside(user="user")
       .table-cell.content-center.align-top.relative
         .gutter-top-3x
           .gutter-horizontal.gutter-vertical

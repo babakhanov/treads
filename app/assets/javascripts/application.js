@@ -1,10 +1,12 @@
 //= require socket.io-client/socket.io
 //= require jquery
-//= require jquery.autogrow-textarea
 //= require angular/angular
+//= require angular-devise/lib/devise
 //= require angular-route/angular-route
 //= require angular-rails-templates
 //= require angular-resource/angular-resource
+//= require angular-sanitize/angular-sanitize
+//= require ngtoast/dist/ngToast
 //= require_tree ./templates
 //= require app/listen
 //= require app/app
