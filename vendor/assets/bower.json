@@ -6,6 +6,7 @@
     "angular-route": "latest",
     "angular-resource": "latest",
     "angular-devise": "latest",
+    "angular-cookies": "latest",
     "ngtoast": "latest"
   }
 }

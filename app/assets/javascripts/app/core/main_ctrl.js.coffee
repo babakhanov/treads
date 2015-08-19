@@ -1,6 +1,9 @@
 mainCtrl = ->
-  (Auth, $location, $scope, ngToast, $rootScope) ->
+  (Auth, $location, $scope, ngToast, $rootScope, $cookies) ->
     $scope.ready = false
+    $rootScope.token = $cookies.get("XSRF-TOKEN")
+    console.log $rootScope.token
+    window.co = $cookies
     if window.anonimusUser
       $scope.ready = true
       $scope.isAuthenticated = false
@@ -41,4 +44,12 @@ mainCtrl = ->
         # An error occurred logging out.
 
 angular.module "app.core"
-  .controller "mainCtrl", ["Auth", "$location", "$scope", "ngToast", "$rootScope", mainCtrl()] 
+  .controller "mainCtrl", [
+    "Auth", 
+    "$location", 
+    "$scope", 
+    "ngToast", 
+    "$rootScope", 
+    "$cookies", 
+    mainCtrl()
+  ] 

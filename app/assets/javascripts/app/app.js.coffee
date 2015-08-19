@@ -8,6 +8,7 @@ angular.module("app", [
   "templates"
   "ngResource"
   "Devise"
+  "ngCookies"
   "ngToast"
   "app.core"
   "app.auth"
