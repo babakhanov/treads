@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     if @message.save
       render json: @message
-      $redis.publish "message", MessageSerializer.new(@message).to_json
+      $redis.publish "message", MessageRespSerializer.new(@message).to_json
     else
       render json: { errors: @message.errors.full_messages }, status: status
     end

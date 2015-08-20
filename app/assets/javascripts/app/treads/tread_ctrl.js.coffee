@@ -26,10 +26,10 @@ treadCtrl = ->
     socket = io("http://localhost:5001")
     socket.on "connect", ->
       console.log "connect"
-    socket.on chat_is, (data) ->
-      if data.user_id != currentUser.id
-        $scope.messages.push(data)
-        $scope.$apply()
+
+    socket.on "message", (data) ->
+      console.log data
+
     socket.on "disconnect", ->
       console.log "disconnect"
     
