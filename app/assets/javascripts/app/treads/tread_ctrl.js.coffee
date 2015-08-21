@@ -1,37 +1,35 @@
 treadCtrl = ->
-  ($scope, Tread, Message, $routeParams, $rootScope) ->
+  ($rootScope, $routeParams, $scope, Message, Tread, currentUser) ->
     $scope.newMsg = ""
-    currentUser = $rootScope.user.user
-    treadId = $routeParams.id
-    $scope.$on "onRepeatLast", (scope, element, attrs) ->
-      element.parent("div").animate { scrollTop: 10000 }, '500'
-      element.parent("div").addClass("loaded")
-      
+
+    treadId = parseInt($routeParams.id)
+
     Tread.index (id: treadId), (response) ->
       $scope.tread = response.tread
       $scope.messages = $scope.tread.messages
       $scope.users = []
+      $rootScope.treads[treadId].new_msg = false
       $scope.tread.users.map (user) ->
         $scope.users[user.id] = user
 
     $scope.sendMsg = ->
       if $scope.newMsg
-        console.log ">" + $scope.newMsg
         Message.create (id: treadId, message: {text: $scope.newMsg, tread_id: treadId, user_id: currentUser.id}), (response) ->
           $scope.messages.push(response.message)
           $scope.newMsg = ""
 
-    chat_is = "tread_#{treadId}"
-    console.log chat_is
-    socket = io("http://localhost:5001")
-    socket.on "connect", ->
-      console.log "connect"
+    window.socket.on "message", (data) ->
+      if data.user_id != currentUser.id && treadId == data.tread_id
+        $scope.messages.push data
+        $scope.$apply()
 
-    socket.on "message", (data) ->
-      console.log data
-
-    socket.on "disconnect", ->
-      console.log "disconnect"
-    
-
-angular.module("app.treads").controller "treadCtrl", ["$scope", "Tread", "Message", "$routeParams", "$rootScope", treadCtrl()]
+angular.module "app.treads"
+  .controller "treadCtrl", [
+    "$rootScope"
+    "$routeParams"
+    "$scope"
+    "Message"
+    "Tread"
+    "currentUser"
+    treadCtrl()
+  ]

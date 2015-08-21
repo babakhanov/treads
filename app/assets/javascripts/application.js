@@ -1,5 +1,6 @@
 //= require socket.io-client/socket.io
 //= require jquery
+// require underscore/underscore
 //= require angular/angular
 //= require angular-devise/lib/devise
 //= require angular-route/angular-route

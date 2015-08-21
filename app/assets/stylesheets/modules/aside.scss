@@ -10,6 +10,21 @@
   &-user {
     @extend .link-base;
     &-short, &-md {
+      &.new-msg {
+        &:before {
+          content: '';
+          display: block;
+          width: 0.84em;
+          height: 0.84em;
+          position: absolute;
+          top: -0.25em;
+          right: -0.25em;
+          background: rgb(150, 183, 51);
+          border-radius: 100%;
+          border: 2px solid white;
+        }
+      }
+      @extend .relative;
       @extend .smile;
       @extend .middle;
       @extend .text-center;
