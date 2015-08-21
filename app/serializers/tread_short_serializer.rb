@@ -1,4 +1,7 @@
 class TreadShortSerializer <  ActiveModel::Serializer
-  attributes :id
+  attributes :id, :new_msg
   has_many :users
+  def new_msg
+    false
+  end
 end

@@ -1,12 +1,12 @@
-.message-item(ng-class="{'text-right': user.id == current_user.user.id}")
+.message-item(ng-class="{'text-right': user.id == currentUser.id}")
   .gutter-bottom-xs
-    .align-middle.smile.gutter-right-sm(ng-if="user.id != current_user.user.id")
+    .align-middle.smile.gutter-right-sm(ng-if="user.id != currentUser.id")
       .aside-user-md
         {{::user.full_name | userAbbr}}
     .align-middle.smile.bg-white.gutter-horizontal.gutter-vertical-sm
       .gutter-bottom-xs.text-semi.text-left
         {{::user.full_name}}
       {{::message.text}}
-    .align-middle.smile.gutter-left-sm(ng-if="user.id == current_user.user.id")
+    .align-middle.smile.gutter-left-sm(ng-if="user.id == currentUser.id")
       .aside-user-md
         {{::user.full_name | userAbbr}}

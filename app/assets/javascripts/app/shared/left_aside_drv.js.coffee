@@ -4,23 +4,15 @@ angular.module("app.shared").directive "leftAside", ->
   templateUrl: "layout/left_aside.html"
   scope:
     user: "="
-  controller: [ "$scope", "Tread", "$rootScope", ($scope, Tread, $rootScope) ->
-    $scope.user = $rootScope.user
-    $scope.showTreads = false
-
-    getTreads = ->
-      Tread.index "", (response) => 
-        $scope.treads = response.treads
-        $scope.showTreads = true
-
+  controller: [ "$scope", "$rootScope", ($scope, $rootScope) ->
     $scope.$watch (->
-      $rootScope.user
+      $rootScope.treads
     ), (->
-      $scope.user = $rootScope.user
-      if $scope.user
-        getTreads()
+      $scope.treads = $rootScope.treads
+      if $scope.treads.length
+        $scope.showTreads = true
+      else
+        $scope.showTreads = false
     ), true
-
-    getTreads() if $scope.user
 
   ] 

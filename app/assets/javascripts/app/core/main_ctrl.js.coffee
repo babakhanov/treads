@@ -1,9 +1,20 @@
 mainCtrl = ->
-  (Auth, $location, $scope, ngToast, $rootScope, $cookies) ->
+  (Auth, $location, $scope, ngToast, $rootScope, $cookies, Tread) ->
+  ($cookies, $location, $rootScope, $scope, Auth, Tread, ngToast) ->
+
     $scope.ready = false
     $rootScope.token = $cookies.get("XSRF-TOKEN")
-    console.log $rootScope.token
-    window.co = $cookies
+    $rootScope.treads = {}
+
+    window.socket.on "message", (data) ->
+      unless $location.path() == "/treads/#{data.tread_id}"
+        $rootScope.treads[data.tread_id].new_msg = true
+
+    getTreads = ->
+      Tread.index "", (response) -> 
+        for tread in response.treads
+          $rootScope.treads[tread.id] = tread
+
     if window.anonimusUser
       $scope.ready = true
       $scope.isAuthenticated = false
@@ -22,6 +33,7 @@ mainCtrl = ->
       if currentUser.user && currentUser.user.id
         $scope.isAuthenticated = true
         $rootScope.user = currentUser
+        getTreads()
       else
         $scope.isAuthenticated = false
         $rootScope.user = null
@@ -29,6 +41,7 @@ mainCtrl = ->
     $scope.$on 'devise:new-session', (event, currentUser) ->
       $scope.isAuthenticated = true
       $rootScope.user = currentUser
+      getTreads()
 
     $scope.$on 'devise:logout', (event, oldCurrentUser) ->
       $scope.isAuthenticated = false
@@ -43,13 +56,15 @@ mainCtrl = ->
       ), (error) ->
         # An error occurred logging out.
 
+
 angular.module "app.core"
   .controller "mainCtrl", [
-    "Auth", 
-    "$location", 
-    "$scope", 
-    "ngToast", 
-    "$rootScope", 
-    "$cookies", 
+    "$cookies"
+    "$location"
+    "$rootScope"
+    "$scope"
+    "Auth"
+    "Tread"
+    "ngToast"
     mainCtrl()
   ] 
