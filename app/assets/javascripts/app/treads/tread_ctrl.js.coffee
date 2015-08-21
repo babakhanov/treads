@@ -1,13 +1,14 @@
 treadCtrl = ->
-  ($scope, Tread, Message, $routeParams, currentUser) ->
+  ($rootScope, $routeParams, $scope, Message, Tread, currentUser) ->
     $scope.newMsg = ""
 
-    treadId = $routeParams.id
+    treadId = parseInt($routeParams.id)
 
     Tread.index (id: treadId), (response) ->
       $scope.tread = response.tread
       $scope.messages = $scope.tread.messages
       $scope.users = []
+      $rootScope.treads[treadId].new_msg = false
       $scope.tread.users.map (user) ->
         $scope.users[user.id] = user
 
@@ -18,16 +19,17 @@ treadCtrl = ->
           $scope.newMsg = ""
 
     window.socket.on "message", (data) ->
-      if data.user_id != currentUser.id
+      if data.user_id != currentUser.id && treadId == data.tread_id
         $scope.messages.push data
         $scope.$apply()
 
 angular.module "app.treads"
   .controller "treadCtrl", [
-    "$scope" 
-    "Tread" 
-    "Message" 
-    "$routeParams" 
-    "currentUser" 
+    "$rootScope"
+    "$routeParams"
+    "$scope"
+    "Message"
+    "Tread"
+    "currentUser"
     treadCtrl()
   ]

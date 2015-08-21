@@ -1,19 +1,20 @@
 mainCtrl = ->
-  (Auth, $location, $scope, ngToast, $rootScope, $cookies, Tread) ->
   ($cookies, $location, $rootScope, $scope, Auth, Tread, ngToast) ->
 
     $scope.ready = false
     $rootScope.token = $cookies.get("XSRF-TOKEN")
-    $rootScope.treads = {}
-
+    $scope.treads = {}
+   
     window.socket.on "message", (data) ->
       unless $location.path() == "/treads/#{data.tread_id}"
-        $rootScope.treads[data.tread_id].new_msg = true
+        $scope.treads[data.tread_id].new_msg = true
+        $scope.$apply()
 
     getTreads = ->
       Tread.index "", (response) -> 
         for tread in response.treads
-          $rootScope.treads[tread.id] = tread
+          $scope.treads[tread.id] = tread
+        $rootScope.treads = $scope.treads
 
     if window.anonimusUser
       $scope.ready = true
@@ -55,6 +56,7 @@ mainCtrl = ->
         alert 'Successfully logged out!'
       ), (error) ->
         # An error occurred logging out.
+
 
 
 angular.module "app.core"
