@@ -11,8 +11,8 @@ currentUser = {}
 clients = {}
 redis.subscribe("message")
 
-
 #dirty hack to get a cookies without modules
+
 getCookies = (_cookies) ->
   cookies = {}
   _cookies.replace(/[\n\s]+/g, "").split(";").map (c) ->
@@ -25,7 +25,6 @@ io.on "connection", (socket) ->
   decoder.decodeCookie cookies[sessionName], (err, sessionData) ->
     currentSession = JSON.parse(sessionData)
     currentUser.id = currentSession["warden.user.user.key"][0][0]
-    socket.emit "message", currentSession
     if currentUser.id > 0
       clients[currentUser.id] = socket #push to list of a connected clients
     else

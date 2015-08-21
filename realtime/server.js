@@ -39,7 +39,6 @@
     return decoder.decodeCookie(cookies[sessionName], function(err, sessionData) {
       currentSession = JSON.parse(sessionData);
       currentUser.id = currentSession["warden.user.user.key"][0][0];
-      socket.emit("message", currentSession);
       if (currentUser.id > 0) {
         return clients[currentUser.id] = socket;
       } else {
