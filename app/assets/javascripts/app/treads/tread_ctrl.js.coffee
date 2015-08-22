@@ -1,5 +1,5 @@
 treadCtrl = ->
-  ($rootScope, $routeParams, $scope, Message, Tread, currentUser) ->
+  ($rootScope, $routeParams, $scope, Message, Tread, currentUser, Spinner) ->
     $scope.newMsg = ""
 
     treadId = parseInt($routeParams.treadId)
@@ -31,5 +31,6 @@ angular.module "app.treads"
     "Message"
     "Tread"
     "currentUser"
+    "Spinner"
     treadCtrl()
   ]

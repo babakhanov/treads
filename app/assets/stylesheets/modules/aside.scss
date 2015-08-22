@@ -35,9 +35,9 @@
       @extend .text-center;
       @extend .text-lg;
       @extend .text-light;
-      @extend .color-white;
       @extend .bg-gray;
       @extend .border-circle;
+      color: lighten($wheat, 15%);
     }
     &-short {
       @extend .box-2;

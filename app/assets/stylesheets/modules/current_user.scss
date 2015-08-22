@@ -1,0 +1,9 @@
+.current-user {
+  color: $wheat;
+  .aside-user {
+    color: $wheat;
+    &:hover {
+      color: white;
+    }
+  } 
+}

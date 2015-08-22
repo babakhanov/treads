@@ -1,0 +1,34 @@
+.header:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-repeat: repeat-x;
+  height: $header-height;
+  z-index: 2;
+  @include bg-svg($loading-svg);
+  @include opacity(0);
+  background-size: 74px 74px;
+  @include transition(opacity 0.8s ease-out);
+}
+body.spinner {
+  .header {
+    &:after {
+      @include opacity(0.2);
+      @include animation(move 1.2s infinite linear);
+    }
+    .header-container {
+      z-index: 1;
+    }
+  }
+}
+@include keyframes(move) {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 74px 0;
+  }
+}

@@ -10,9 +10,14 @@
     = csrf_meta_tags
   %body(ng-controller="mainCtrl")
     .header
-      .col-xs-6
-      .col-xs-6.text-right
-        %current-user(user="currentUser.user" ng-if="currentUser")
+      .header-container
+        .col-xs-5
+          .smile.pointer.head-lg.align-middle.line-norm
+            =icon :menu
+        .col-xs-2.text-center
+          .head-lg.smile.align-middle=icon :palm
+        .col-xs-5.text-right
+          %current-user(user="currentUser.user" ng-if="currentUser")
     .table.fixed.content(ng-if="ready")
       %left-aside(user="user" treads="treads")
       .table-cell.content-center.align-top.relative

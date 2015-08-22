@@ -1,4 +1,6 @@
-.smile
-  =I18n.t("hello")
-  {{::user.full_name}}
+.smile.current-user
+  .aside-user.pointer 
+    .smile.middle.gutter-left-sm
+      {{::user.full_name}}
+      =icon "angle-down"
 

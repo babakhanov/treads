@@ -12,3 +12,38 @@
     @include opacity(1);
   }
 }
+.message {
+  &-body {
+    @extend .smile;
+    @extend .align-middle;
+    @extend .bg-white;
+    @extend .gutter-horizontal;
+    @extend .gutter-vertical-sm;
+    @extend .relative;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      height: 1em;
+      width: 1em;
+      background: white;
+      @include rotate(45deg);
+      margin-top: -0.8em;
+    }
+    &.to-me:before {
+      left: -0.5em;
+      border-bottom-left-radius: 4px;
+      border-left: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+    &.from-me:before {
+      right: -0.5em;
+      border-top-right-radius: 4px;
+      border-right: 1px solid #ddd;
+      border-top: 1px solid #ddd;
+    }
+  }
+}

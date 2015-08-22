@@ -21,3 +21,11 @@
     #{$side}: 0;
   }
 }
+.cursor {
+  &-pointer {
+    cursor: pointer;
+  }
+}
+.pointer {
+  @extend .cursor-pointer;
+}

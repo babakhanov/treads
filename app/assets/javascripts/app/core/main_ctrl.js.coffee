@@ -1,5 +1,5 @@
 mainCtrl = ->
-  ($cookies, $location, $rootScope, $scope, Auth, Tread, ngToast) ->
+  ($cookies, $location, $rootScope, $scope, Auth, Tread, ngToast, Spinner) ->
 
     $scope.ready = false
     $rootScope.token = $cookies.get("XSRF-TOKEN")
@@ -11,7 +11,9 @@ mainCtrl = ->
         $scope.$apply()
 
     getTreads = ->
+      Spinner.add()
       Tread.index "", (response) -> 
+        Spinner.remove()
         for tread in response.treads
           $scope.treads[tread.id] = tread
         $rootScope.treads = $scope.treads
@@ -74,5 +76,6 @@ angular.module "app.core"
     "Auth"
     "Tread"
     "ngToast"
+    "Spinner"
     mainCtrl()
   ] 

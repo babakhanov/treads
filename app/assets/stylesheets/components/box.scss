@@ -11,7 +11,7 @@
 .block {
   @for $i from 1 to 24 {
     &-#{$i}{
-      width: #{$i}em;
+      width: #{$i}em!important;
     }
     &-fl-#{$i}{
       width: 100%;
