@@ -4,7 +4,7 @@ angular.module "app.core"
       .when("/",
         templateUrl: "treads/index.html",
         controller: "treadsCtrl"
-      ).when('/treads/:id',
+      ).when('/treads/:treadId',
         templateUrl: 'treads/show.html',
         controller: 'treadCtrl'
       ).when("/sign_up",

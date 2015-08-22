@@ -1,5 +1,8 @@
 sessionDecoder = require("rails-session-decoder")
-redis = require("redis").createClient()
+redis = require("redis")
+
+redisListener = redis.createClient()
+
 io = require("socket.io")(5001)
 
 sessionName = "_treads_session"
@@ -9,7 +12,8 @@ decoder = sessionDecoder(secret)
 currentSession = {}
 currentUser = {}
 clients = {}
-redis.subscribe("message")
+
+redisListener.subscribe("message")
 
 #dirty hack to get a cookies without modules
 
@@ -30,7 +34,7 @@ io.on "connection", (socket) ->
     else
       socket.disconnect() #otherwise disconnect a client
 
-redis.on "message", (channel, message) ->
+redisListener.on "message", (channel, message) ->
   response = JSON.parse(message).message_resp
   for u in response.tread.users
     clients[u.id].emit "message", response if clients[u.id]

@@ -2,7 +2,7 @@ treadCtrl = ->
   ($rootScope, $routeParams, $scope, Message, Tread, currentUser) ->
     $scope.newMsg = ""
 
-    treadId = parseInt($routeParams.id)
+    treadId = parseInt($routeParams.treadId)
 
     Tread.index (id: treadId), (response) ->
       $scope.tread = response.tread

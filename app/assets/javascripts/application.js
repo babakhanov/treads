@@ -10,5 +10,4 @@
 //= require angular-cookies/angular-cookies
 //= require ngtoast/dist/ngToast
 //= require_tree ./templates
-//= require app/listen
 //= require app/app

@@ -1,10 +1,12 @@
 .table-cell.content-left.align-top(ng-show="user")
   .aside
     .aside-container
-      .gutter-horizontal.gutter-vertical
-        .gutter-vertical-xs.border-bottom.border-light(ng-repeat="tread in treads track by tread.id")
+      .gutter-vertical.gutter-horizontal
+        %input.form-control(placeholder="Search")
+      .clearfix
+        .aside-tread-item(ng-repeat="tread in treads track by tread.id" ng-class="{'active':$routeParams.treadId==tread.id}")
           %a.aside-user(ng-href="/#/treads/{{tread.id}}")
-            .aside-user-short(ng-class="{'new-msg':tread.new_msg}")
+            .aside-user-short(ng-class="{'new-msg':tread.new_msg}" amount="{{tread.new_msg}}")
               {{::tread.users[0].full_name | userAbbr}}
             .smile.middle.gutter-left-sm
               {{::tread.users[0].first_name}}

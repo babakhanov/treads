@@ -12,16 +12,21 @@
     &-short, &-md {
       &.new-msg {
         &:before {
-          content: '';
-          display: block;
-          width: 0.84em;
-          height: 0.84em;
+          content: attr(amount);
+          height: 2em;
+          min-width: 2em;
+          text-align: center;
           position: absolute;
-          top: -0.25em;
-          right: -0.25em;
-          background: rgb(150, 183, 51);
+          top: -0.8em;
+          right: -0.8em;
+          background: #96b733;
           border-radius: 100%;
           border: 2px solid white;
+          line-height: 1.7;
+          font-size: 9px;
+          font-weight: bold;
+          padding: 0 0.3em;
+          display: block;
         }
       }
       @extend .relative;
@@ -39,6 +44,19 @@
     }
     &-md {
       @extend .box-3;
+    }
+  }
+  &-tread {
+    &-item {
+      @extend .gutter-vertical-xs;
+      @extend .gutter-horizontal;
+      border-bottom: 1px solid rgba($body-bg, 0.5);
+      &:first-child {
+        border-top: 1px solid rgba($body-bg, 0.5);
+      }
+      &.active {
+        background: rgba($body-bg, 0.5);
+      }
     }
   }
 }

@@ -9,9 +9,13 @@
   }
 }
 .block {
-  @for $i from 1 to 13 {
+  @for $i from 1 to 24 {
     &-#{$i}{
       width: #{$i}em;
+    }
+    &-fl-#{$i}{
+      width: 100%;
+      max-width: #{$i}em;
     }
   }
 }
