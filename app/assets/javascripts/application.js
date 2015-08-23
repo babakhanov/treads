@@ -1,7 +1,10 @@
 //= require socket.io-client/socket.io
 //= require jquery
 // require underscore/underscore
+//= require i18n
+//= require i18n/translations
 //= require angular/angular
+//= require angular-translate
 //= require angular-devise/lib/devise
 //= require angular-route/angular-route
 //= require angular-rails-templates

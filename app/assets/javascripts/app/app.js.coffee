@@ -10,6 +10,7 @@ angular.module("app", [
   "Devise"
   "ngCookies"
   "ngToast"
+  "pascalprecht.translate"
   "app.core"
   "app.auth"
   "app.shared"
@@ -17,3 +18,10 @@ angular.module("app", [
 ])
 
 
+angular.module "app"
+  .config [
+    "$translateProvider" 
+    ($translateProvider) ->
+      $translateProvider.preferredLanguage(I18n.locale);
+      $translateProvider.translations I18n.locale, I18n.translations[I18n.locale]
+  ]

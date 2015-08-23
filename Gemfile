@@ -25,6 +25,7 @@ gem 'puma', '~> 2.12.3'
 gem "bower-rails", "~> 0.10.0"
 
 gem 'redis-rails', '~> 4.0.0'
+gem "i18n-js", ">= 3.0.0.rc11"
 
 group :development, :test do
   gem 'faker', '~> 1.4.3'

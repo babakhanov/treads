@@ -1,8 +1,13 @@
 .cover.gutter-top-3x(style="background: #eee;" tread-scroll)
   %table.table.fixed
-    %tr(style="height: 100%;")
-      %td(style="height: 100%;")
-        .messages
+    %tr.full-height
+      %td.full-height.align-middle.text-center(ng-if="!messages.length")
+        .color-light.title-lg
+          = icon :palm
+        .color-light.head-md.text-light
+          {{::"js.tread.no_one_message" | translate}}
+      %td.full-height(ng-if="messages.length")
+        .messages(ng-if="messages.length")
           %div(ng-repeat="message in messages track by message.id" on-last-repeat)
             %message-item(message="message" user="users[message.user_id]")
     %tr

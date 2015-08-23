@@ -35,6 +35,7 @@ body {
   color: #f5deb3;
   line-height: $header-height;
   &-container {
+    padding-left: 32rem;
     position: relative;
     z-index: 4;
   }
