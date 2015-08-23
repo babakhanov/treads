@@ -31,19 +31,27 @@
       width: 1em;
       background: white;
       @include rotate(45deg);
-      margin-top: -0.8em;
+      margin-top: -0.5em;
     }
-    &.to-me:before {
-      left: -0.5em;
-      border-bottom-left-radius: 4px;
-      border-left: 1px solid #ddd;
-      border-bottom: 1px solid #ddd;
+    &.to-me {
+      background: #fff8dc;
+      &:before {
+        left: -0.5em;
+        border-bottom-left-radius: 4px;
+        border-left: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        background: #fff8dc;
+      }
     }
-    &.from-me:before {
-      right: -0.5em;
-      border-top-right-radius: 4px;
-      border-right: 1px solid #ddd;
-      border-top: 1px solid #ddd;
+    &.from-me {
+      background: #f5fffa;
+      &:before {
+        right: -0.5em;
+        border-top-right-radius: 4px;
+        border-right: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+        background: #f5fffa;
+      }
     }
   }
 }

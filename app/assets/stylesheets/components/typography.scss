@@ -45,6 +45,23 @@
     font-size: 1.9em;
   }
 }
+.title {
+  &-xs {
+    font-size: 2.05em;
+  }
+  &-sm {
+    font-size: 2.20em;
+  }
+  &-norm {
+    font-size: 2.35em;
+  }
+  &-md {
+    font-size: 2.50em;
+  }
+  &-lg {
+    font-size: 2.65em;
+  }
+}
 .color {
   &-white {
     color: white;

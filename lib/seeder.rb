@@ -14,7 +14,7 @@ module Seeder extend self
 
   def create_treads
     current_user = User.find_by(email: "test@mail.com")
-    users = User.all
+    users = User.where.not(email: "test@mail.com")
     users.each do |user|
       tread = Tread.create
       tread.users << current_user

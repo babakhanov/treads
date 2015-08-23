@@ -79,14 +79,16 @@ output {
   color: $input-color;
   background-color: $input-bg;
   background-image: none;
+
   border: 1px solid $input-border;
   border-radius: $input-border-radius;
+
   @include transition(border-color ease-in-out .15s);
   @include form-control-focus;
   @include placeholder;
 
 
-
+  background: #fefefe;
   border: 1px solid $input-border;
   @include box-shadow(inset 0 0 1px $input-border);
   @include transition-duration(0);
@@ -95,7 +97,8 @@ output {
   }
   &:focus {
     border: 1px solid $blue-base;
-    @include box-shadow(inset 0 0 1px $blue-base);
+    background: white;
+    @include box-shadow(inset 0 0 1px $blue-base, 0 0 1px $blue-base);
   }
   &.in {
     @include box-shadow(none);
@@ -576,6 +579,50 @@ input[type="checkbox"] {
       .control-label {
         padding-top: ($padding-small-vertical + 1);
         font-size: $font-size-small;
+      }
+    }
+  }
+}
+.form {
+  &-group {
+    display: block;
+    margin: 0;
+    padding-bottom: 1.5rem;
+    position: relative;
+    &.inline {
+      padding-bottom: 0;
+    }
+    &.addon {
+      &-left {
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          line-height: $input-height-base;
+          display: block;
+          width: 2em;
+          text-align: center;
+          color: rgba(black, 0.2);
+        }
+        .form-control {
+          padding-left: 2em;
+        }
+      }
+      &-right {
+        &:before {
+          position: absolute;
+          top: 0;
+          right: 0;
+          line-height: $input-height-base;
+          display: block;
+          width: 2em;
+          text-align: center;
+          color: rgba(black, 0.2);
+        }
+        .form-control {
+          padding-right: 2em;
+        }
+
       }
     }
   }

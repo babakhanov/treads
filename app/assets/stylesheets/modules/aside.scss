@@ -8,7 +8,6 @@
     top: $header-height;
   }
   &-user {
-    @extend .link-base;
     &-short, &-md {
       &.new-msg {
         &:before {
@@ -48,9 +47,14 @@
   }
   &-tread {
     &-item {
+      display: block;
+      color: $text-color;
       @extend .gutter-vertical-xs;
       @extend .gutter-horizontal;
       border-bottom: 1px solid rgba($body-bg, 0.5);
+      &:hover {
+        background: rgba($body-bg, 0.25);
+      }
       &:first-child {
         border-top: 1px solid rgba($body-bg, 0.5);
       }
