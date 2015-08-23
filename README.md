@@ -2,9 +2,9 @@
 
 ### How run a project? ###
 
-* rake db:seed
-* username: test@mail.com
-* password: password
+* rake `db:seed`
+* username: `test@mail.com`
+* password: `password`
 
 ### How run a project work? ###
 
