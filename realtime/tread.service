@@ -1,0 +1,13 @@
+[Service]
+WorkingDirectory=/home/alex/myprojects/treads/realtime
+ExecStart=/usr/bin/node server.js
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=treads
+User=alex
+Group=alex
+Environment='NODE_ENV=production'
+
+[Install]
+WantedBy=multi-user.target

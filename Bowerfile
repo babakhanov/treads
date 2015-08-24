@@ -2,11 +2,12 @@
 # Check out https://github.com/42dev/bower-rails#ruby-dsl-configuration for more options
 
 # asset 'bootstrap'
-asset "socket.io-client"
-asset "angular";
-asset "angular-route";
-asset "angular-resource";
-asset "angular-devise";
-asset "angular-cookies";
-asset "ngtoast"
-asset "underscore"
+asset "socket.io-client", "1.3.5";
+asset "angular", "1.4.4";
+asset "angular-route", "1.4.4";
+asset "angular-resource", "1.4.4";
+asset "angular-devise", "1.1.0";
+asset "angular-cookies", "1.4.4";
+asset "ngtoast", "1.5.5";
+asset "underscore", "1.8.3";
+asset "angular-translate", "2.7.2";
