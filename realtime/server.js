@@ -40,8 +40,8 @@
     cookies = getCookies(socket.handshake.headers.cookie);
     return decoder.decodeCookie(cookies[sessionName], function(err, sessionData) {
       currentSession = JSON.parse(sessionData);
-      currentUser.id = currentSession["warden.user.user.key"][0][0];
-      if (currentUser.id > 0) {
+      if (currentSession && currentSession["warden.user.user.key"] && currentSession["warden.user.user.key"][0][0] > 0) {
+        currentUser.id = currentSession["warden.user.user.key"][0][0];
         return clients[currentUser.id] = socket;
       } else {
         return socket.disconnect();

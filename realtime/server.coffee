@@ -28,8 +28,8 @@ io.on "connection", (socket) ->
   cookies = getCookies(socket.handshake.headers.cookie)
   decoder.decodeCookie cookies[sessionName], (err, sessionData) ->
     currentSession = JSON.parse(sessionData)
-    currentUser.id = currentSession["warden.user.user.key"][0][0]
-    if currentUser.id > 0
+    if currentSession && currentSession["warden.user.user.key"] && currentSession["warden.user.user.key"][0][0] > 0 
+      currentUser.id = currentSession["warden.user.user.key"][0][0]
       clients[currentUser.id] = socket #push to list of a connected clients
     else
       socket.disconnect() #otherwise disconnect a client

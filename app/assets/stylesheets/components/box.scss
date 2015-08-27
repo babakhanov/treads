@@ -4,6 +4,7 @@
       width: #{$i}em;
       height: #{$i}em;
       line-height: #{$i}em;
+      text-align: center;
       @extend .text-center;
     }
   }

@@ -6,85 +6,21 @@
     padding: 0;
   }
 }
-.text {
-  &-md {
-    font-size: 1.2em;
-  }
-}
-.text {
-  &-xs {
-    font-size: 0.72em;
-  }
-  &-sm {
-    font-size: 0.86em;
-  }
-  &-norm {
-    font-size: 1em;
-  }
-  &-md {
-    font-size: 1.14em;
-  }
-  &-lg {
-    font-size: 1.28em;
-  }
-}
-.head {
-  &-xs {
-    font-size: 1.42em;
-  }
-  &-sm {
-    font-size: 1.57em;
-  }
-  &-norm {
-    font-size: 1.71em;
-  }
-  &-md {
-    font-size: 1.85em;
-  }
-  &-lg {
-    font-size: 1.9em;
-  }
-}
-.title {
-  &-xs {
-    font-size: 2.05em;
-  }
-  &-sm {
-    font-size: 2.20em;
-  }
-  &-norm {
-    font-size: 2.35em;
-  }
-  &-md {
-    font-size: 2.50em;
-  }
-  &-lg {
-    font-size: 2.65em;
-  }
-}
-.color {
-  &-white {
-    color: white;
-  }
-  &-wheat {
-    color: $wheat;
-  }
-  &-text {
-    color: $text-color;
-  }
-  &-gray {
-    color: rgba($text-color, 0.5);
-  }
-  &-light {
-    color: rgba($text-color, 0.3);
-  }
-}
-.text {
-  @each $i in (left, center, right){
-    &-#{$i}{
-      text-align: $i;
+
+$typo-presets: (text, head, title);
+$typo-start: 0.55em;
+$typo-steps: (xs, sm, norm, md, lg);
+
+@each $preset in $typo-presets {
+  .#{$preset} {
+    @each $step in $typo-steps {
+      $typo-start: $typo-start + 0.15;
+      &-#{$step}{
+        font-size: $typo-start;
+      }
     }
   }
+  $typo-start: $typo-start + 0.75;
 }
 .line {
   &-norm {
@@ -92,5 +28,10 @@
   }
   &-null {
     line-height: 0;
+  }
+}
+@each $side in (center, right, left){
+  .text-#{$side}{
+    text-align: $side;
   }
 }
