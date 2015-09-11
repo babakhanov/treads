@@ -1,5 +1,6 @@
 .text-center
   .smile.block-fl-20.text-left
+    %h2 Sign In
     %form(name="signForm" ng-submit="signForm.$valid && signIn()")
       .form-group{"ng-class" => "{ 'has-error': signForm.email.$invalid && signForm.email.$touched, 'has-success': signForm.email.$valid }"}
         %input.todo-input.form-control{:name => "email", "ng-model" => "signinData.email", "validate-email" => "", :placeholder => "Email", :type => "email", :required => true}

@@ -35,20 +35,7 @@ body {
   color: #f5deb3;
   line-height: $header-height;
   &-container {
-    padding-left: 32rem;
     position: relative;
     z-index: 4;
-  }
-  &:before {
-    content: '';
-    display: block;
-    height: $header-height;
-    background: rgba(black, 0.1);
-    border-right: 2px solid rgba(black, 0.05);
-    width: 32rem;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    position: absolute;
   }
 }
