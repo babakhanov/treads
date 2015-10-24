@@ -21,3 +21,7 @@
 /vendor/assets/bower_components
 /vendor/assets/bower.json
 /realtime/node_modules
+chef/cookbooks
+chef/tmp
+chef/Cheffile.lock
+.vagrant

@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'knife-solo', ">= 0.3.0.pre2"
+gem 'librarian'
+
 gem 'rails', '4.2.3'
 gem 'pg', '~> 0.18.2'
 gem 'sass-rails', '~> 5.0.0.beta1'
