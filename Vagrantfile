@@ -8,7 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/trusty64"
 
   # Configurate the virtual machine to use 2GB of RAM
-  config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
+  # config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", "2048"]
   end
@@ -48,4 +48,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       }
     }
   end
+  config.vm.provision :shell, inline: %q{cd /vagrant && bundle install}
+  config.vm.provision :shell, inline: %q{cd /vagrant && rake db:create db:migrate}
+  config.vm.provision :shell, inline: %q{cd /vagrant && rails s -b 0.0.0.0 -d}
 end
