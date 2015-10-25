@@ -33,6 +33,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
           { :type => 'host', :db => 'all', :user => 'all', :addr => '127.0.0.1/32', :method => 'trust' }
         ]
       },
+      "nodejs" => {
+        "version" => "0.10.31",
+        "install_method" => "package",
+      },
+      "npm_packages" => {
+        "packages" => [
+          "bower"
+        ]
+      },
       "rvm" => {
         "gpg" => {},
         "vagrant" => {
@@ -48,6 +57,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       }
     }
   end
+  config.vm.provision :shell, inline: %q{sudo killall -KILL ruby}
   config.vm.provision :shell, inline: %q{cd /vagrant && bundle install}
   config.vm.provision :shell, inline: %q{cd /vagrant && rake db:create db:migrate}
   config.vm.provision :shell, inline: %q{cd /vagrant && rails s -b 0.0.0.0 -d}

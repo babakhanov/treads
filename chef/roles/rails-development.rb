@@ -6,7 +6,9 @@ run_list(
   "recipe[git]",
   "recipe[postgresql::server]",
   "recipe[postgresql::client]",
-  "recipe[nodejs::install_from_binary]",
+  "recipe[nodejs]",
+  "recipe[nodejs::npm]",
+  "recipe[npm_packages]",
   "recipe[rvm::system]",
   "recipe[rvm::vagrant]",
   "recipe[postinstall]"
