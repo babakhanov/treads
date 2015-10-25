@@ -4,8 +4,8 @@ test: &default
   database: treads_test
   pool: 5
   host: localhost
-  user: alex 
-  password: 123
+  user: postgres
+  password: password 
 
 production:
   <<: *default

@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   # Forward the Rails server default port to the host
-  config.vm.network :forwarded_port, guest: 2020, host: 2020
+  config.vm.network :forwarded_port, guest: 3000, host: 3000
 
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = ["chef/cookbooks", "chef/site-cookbooks"]
@@ -23,27 +23,29 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     chef.add_role "rails-development"
     chef.json = {
-        :mysql => {
-          :server_root_password   => '',
-          :server_debian_password => '',
-          :server_repl_password   => ''
+      :postgresql => {
+        :password => {
+          :postgres => "password"
         },
-        "postgresql" => {
-          "password" => {
-            "postgres" => ""
-          }
+        :pg_hba => [
+          { :type => 'local', :db => 'all', :user => 'all', :addr => nil, :method => 'trust' },
+          { :type => 'local', :db => 'all', :user => 'postgres', :addr => nil, :method => 'trust' },
+          { :type => 'host', :db => 'all', :user => 'all', :addr => '127.0.0.1/32', :method => 'trust' }
+        ]
+      },
+      "rvm" => {
+        "gpg" => {},
+        "vagrant" => {
+          "system_chef_solo" => "/opt/chef/bin/chef-solo"
         },
-        "rvm" => {
-          "gpg" => {}, 
-          "vagrant" => {
-            "system_chef_solo" => "/opt/chef/bin/chef-solo"
-          },
-          "rubies"  => ["2.2.2"],
-          "global_gems" => [
-              { 'name' => 'bundler' },
-              { 'name' => 'rails'}
-          ]
-        }
+        "install_rubies" => true,
+        "rubies"  => ["2.2.0", "2.2.2"],
+        "default_ruby" => "2.2.2@global",
+        "global_gems" => [
+            { 'name' => 'bundler' },
+            { 'name' => 'rails'}
+        ]
       }
+    }
   end
 end
