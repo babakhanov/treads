@@ -9,7 +9,7 @@ run_list(
   "recipe[nodejs]",
   "recipe[nodejs::npm]",
   "recipe[npm_packages]",
-  "recipe[rvm::user]",
   "recipe[rvm::vagrant]",
+  "recipe[rvm::system]",
   "recipe[postinstall]"
 )

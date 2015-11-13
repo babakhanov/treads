@@ -48,8 +48,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
           "system_chef_solo" => "/opt/chef/bin/chef-solo"
         },
         "install_rubies" => true,
-        "rubies"  => ["2.2.0", "2.2.2"],
-        "default_ruby" => "2.2.2@global",
+        "rubies"  => ["2.2.3"],
+        "default_ruby" => "2.2.3@global",
         "global_gems" => [
             { 'name' => 'bundler' },
             { 'name' => 'rails'}
