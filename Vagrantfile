@@ -44,10 +44,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       },
       "rvm" => {
         "gpg" => {},
-        "vagrant" => {
-          "system_chef_solo" => "/opt/chef/bin/chef-solo"
-        },
-        "install_rubies" => true,
         "rubies"  => ["2.2.3"],
         "default_ruby" => "2.2.3@global",
         "global_gems" => [
@@ -57,7 +53,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       }
     }
   end
-  config.vm.provision :shell, inline: %q{sudo killall -KILL ruby}
+  #config.vm.provision :shell, inline: %q{sudo killall -KILL ruby}
+  config.vm.provision :shell, inline: %q{sudo chmod -R 777 /usr/local}
   config.vm.provision :shell, inline: %q{cd /vagrant && bundle install}
   config.vm.provision :shell, inline: %q{cd /vagrant && rake db:create db:migrate}
   config.vm.provision :shell, inline: %q{cd /vagrant && rails s -b 0.0.0.0 -d}
